@@ -8,6 +8,11 @@ Check out [docker-unison](https://github.com/SlayerBirden/docker-unison) contain
 ## Installation
 
 Download script and put it to /usr/local/bin.
+
+    wget https://raw.githubusercontent.com/SlayerBirden/fswatch-unison/master/watcher.sh
+    chmod +x watcher.sh
+    cp watcher.sh /usr/local/bin/watcher
+
 Change DOCKER_IP or DOCKER_PORT variables depending on your docker installation.
 
 ## Usage
