@@ -17,7 +17,7 @@ if command -v fswatch &>/dev/null; then
     fswatch -e \.git\/ -e ___jb_tmp___$ -e ___jb_old___$ \
      --batch-marker="$DELIMITER" -r $CURRENT_DIR | while read -d"$DELIMITER" files; \
         do
-            unison $CURRENT_DIR socket://$DOCKER_IP:$DOCKER_PORT/ -auto -batch $(echo $files | sed -e "s#$CURRENT_DIR#-path #g")
+            unison $CURRENT_DIR socket://$DOCKER_IP:$DOCKER_PORT/ -auto -ignorecase=false -batch $(echo $files | sed -e "s#$CURRENT_DIR#-path #g")
         done
 else
     echo "fswatch is not available on your system; aborting"
